@@ -1,0 +1,18 @@
+<button mat-icon-button style = "float : right" (click) = "closeDialog()">
+    <mat-icon>close</mat-icon>
+</button>
+<mat-dialog-content style="background-color : white;">
+    <form [formGroup] = "formGroup">
+        <div class = "input-text">
+            <label>email</label>
+            <input type = "email" formControlName = "email" [(ngModel)]="email" >
+        </div>
+        <div class = "input-text">
+            <label>password</label>
+            <input type = "password" formControlName = "password" [(ngModel)]="password">
+        </div>
+    </form>
+</mat-dialog-content>
+
+
+<button (click) = "submit()" class = "submit-button" [disabled] = "formGroup.invalid">Submit</button>
